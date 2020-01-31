@@ -3,19 +3,21 @@
 
 import ShaderBase, {VANTA} from './_shaderBase.js'
 
-class Fog extends ShaderBase {}
+class Fog extends ShaderBase {
+}
+
 export default VANTA.register('FOG', Fog)
 
 Fog.prototype.defaultOptions = {
-  highlightColor: 0xffc300, // 0xaaffff
-  midtoneColor: 0xff1f00, // 0x00002a
-  lowlightColor: 0x2d00ff, // 0xaaaa7e
-  baseColor: 0xffebeb, // 0x1a9eaa
-  blurFactor: 0.6,
-  speed: 1.0,
-  zoom: 1.0,
-  scale: 2,
-  scaleMobile: 4
+    highlightColor: 0xffc300, // 0xaaffff
+    midtoneColor: 0xff1f00, // 0x00002a
+    lowlightColor: 0x2d00ff, // 0xaaaa7e
+    baseColor: 0xffebeb, // 0x1a9eaa
+    blurFactor: 0.6,
+    speed: 1.0,
+    zoom: 1.0,
+    scale: 2,
+    scaleMobile: 4
 };
 
 Fog.prototype.fragmentShader = `\

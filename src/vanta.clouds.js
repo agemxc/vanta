@@ -1,21 +1,23 @@
 import ShaderBase, {VANTA} from './_shaderBase.js'
 
-class Effect extends ShaderBase {}
+class Effect extends ShaderBase {
+}
+
 export default VANTA.register('CLOUDS', Effect)
 
 Effect.prototype.defaultOptions = {
-  backgroundColor: 0xffffff,
-  skyColor: 0x68b8d7, // 0x99b5bf,
-  cloudColor: 0xadc1de,
-  cloudShadowColor: 0x183550,
-  sunColor: 0xff9919, // 0x1a9eaa
-  sunGlareColor: 0xff6633,
-  sunlightColor: 0xff9933, // 0x1a9eaa
-  scale: 3,
-  scaleMobile: 12,
-  speed: 1,
-  mouseEase: true,
-}
+    backgroundColor: 0xffffff,
+    skyColor: 0x68b8d7, // 0x99b5bf,
+    cloudColor: 0xadc1de,
+    cloudShadowColor: 0x183550,
+    sunColor: 0xff9919, // 0x1a9eaa
+    sunGlareColor: 0xff6633,
+    sunlightColor: 0xff9933, // 0x1a9eaa
+    scale: 3,
+    scaleMobile: 12,
+    speed: 1,
+    mouseEase: true,
+};
 
 Effect.prototype.fragmentShader = `\
 uniform vec2 iResolution;
@@ -162,4 +164,4 @@ void main(){
 
     gl_FragColor = render( ro, rd, ivec2(gl_FragCoord-0.5) );
 }
-`
+`;

@@ -17,8 +17,10 @@
     <meta name="twitter:title" content="Vanta.js - 3D & WebGL Background Animations For Your Website">
     <meta name="twitter:description" content="Gallery of customizable plug & play animated backgrounds using three.js">
     <meta name="twitter:image" content="https://www.vantajs.com/gallery/fb-share-image.jpg">
-    <script src="http://model.agem.io/js/vanta/three.min.js"></script>
+    <script src="./gallery/three.min.js"></script>
     <script src="./dist/vanta.birds.min.js"></script>
+    <script src="./dist/vanta.waves.min.js"></script>
+    <script src="./dist/vanta.globe.min.js"></script>
     <!-- <script src="../js/tween.js"></script> -->
     <!-- <script src="../three/stats.js"></script> -->
     <!-- <script src="../three/renderstats.js"></script> -->
@@ -26,27 +28,44 @@
 </head>
 <body>
 
-<div id="iframeContent"><div id="my">asdasdasdasd</div></div>
+<div id="iframeContent">
+    <div id="my">asdasdasdasd</div>
+</div>
 
 <iframe id="iframe">
 </iframe>
+
+
+<div id="my-outside">asdasdasdasd</div>
+
+<div id="my-globe">asdasdasdasd</div>
+
 <script>
 
-    var content = document.getElementById("iframeContent").innerHTML;
-    var iframe = document.getElementById("iframe");
+    const content = document.getElementById("iframeContent").innerHTML;
+    const iframe = document.getElementById("iframe");
 
-    var frameDoc = iframe.document;
+    let frameDoc = iframe.document;
     if (iframe.contentWindow)
         frameDoc = iframe.contentWindow.document;
 
     frameDoc.open();
     frameDoc.writeln(content);
     frameDoc.close();
+    setTimeout(()=>{
+        VANTA.WAVES({
+            el: '#my',
+            contextWindow: document.getElementById("iframe").contentWindow
+        });
+        VANTA.BIRDS({
+            el: '#my-outside',
+        })
+        VANTA.GLOBE({
+            el: '#my-globe',
+        })
 
-    VANTA.BIRDS({
-        el: '#my',
-        contextWindow: document.getElementById("iframe").contentWindow
-    })
+    },200)
+
 </script>
 </body>
 </html>

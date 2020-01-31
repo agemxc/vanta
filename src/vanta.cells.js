@@ -1,19 +1,21 @@
 import ShaderBase, {VANTA} from './_shaderBase.js'
 
-class Effect extends ShaderBase {}
+class Effect extends ShaderBase {
+}
+
 export default VANTA.register('CELLS', Effect)
 
 Effect.prototype.defaultOptions = {
-  color1: 0x8c8c,
-  color2: 0xf2e735,
-  backgroundColor: 0xd7ff8f,
-  amplitudeFactor: 1.0,
-  ringFactor: 1.0,
-  rotationFactor: 1.0,
-  size: 1.5,
-  speed: 1.0,
-  scaleMobile: 3,
-}
+    color1: 0x8c8c,
+    color2: 0xf2e735,
+    backgroundColor: 0xd7ff8f,
+    amplitudeFactor: 1.0,
+    ringFactor: 1.0,
+    rotationFactor: 1.0,
+    size: 1.5,
+    speed: 1.0,
+    scaleMobile: 3,
+};
 
 Effect.prototype.fragmentShader = `\
 uniform vec2 iResolution;
@@ -67,4 +69,4 @@ void main() {
 
     gl_FragColor = vec4(pow(t, 1.0 - t) * (c1 + c2), 1.0);
 }
-`
+`;

@@ -1,18 +1,20 @@
 import ShaderBase, {VANTA} from './_shaderBase.js'
 
-class Effect extends ShaderBase {}
+class Effect extends ShaderBase {
+}
+
 export default VANTA.register('RIPPLE', Effect)
 
 Effect.prototype.defaultOptions = {
-  color1: 0x60b25,
-  color2: 0xffffff,
-  backgroundColor: 0xf6f6f6,
-  amplitudeFactor: 1.0,
-  ringFactor: 4.0,
-  rotationFactor: 0.1,
-  speed: 1.0,
-  scaleMobile: 4
-}
+    color1: 0x60b25,
+    color2: 0xffffff,
+    backgroundColor: 0xf6f6f6,
+    amplitudeFactor: 1.0,
+    ringFactor: 4.0,
+    rotationFactor: 0.1,
+    speed: 1.0,
+    scaleMobile: 4
+};
 
 Effect.prototype.fragmentShader = `\
 uniform vec2 iResolution;
@@ -56,4 +58,4 @@ void main( void ) {
     vec3 lowlights = mix(backgroundColor, color2, clamp(accumMix1, -0.1, 1.15));
     gl_FragColor = vec4(mix(lowlights, color1, clamp(accumMix2, -0.1, 1.15)), 1);
 }
-`
+`;
