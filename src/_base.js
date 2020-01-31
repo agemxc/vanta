@@ -294,7 +294,7 @@ VANTA.VantaBase = class VantaBase {
             if (Math.abs(this.mouseEaseX - this.mouseX) + Math.abs(this.mouseEaseY - this.mouseY) > 0.1) {
                 this.mouseEaseX += (this.mouseX - this.mouseEaseX) * 0.05;
                 this.mouseEaseY += (this.mouseY - this.mouseEaseY) * 0.05;
-                this.triggerMouseMove(this.mouseEaseX, this.mouseEaseY)
+                // this.triggerMouseMove(this.mouseEaseX, this.mouseEaseY)
             }
         }
 
@@ -337,7 +337,7 @@ VANTA.VantaBase = class VantaBase {
     }
 
     init() {
-        if (typeof this.onInit) {
+        if (typeof this.onInit === "function") {
             this.onInit()
         }
         // this.setupControls()

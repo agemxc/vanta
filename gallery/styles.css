@@ -803,12 +803,12 @@ canvas {
 .dg.main .close-button {
   display: none;
   /*  transition: all 0.1s;
-  padding: 5px 0;
-  background-color: #ddd;
-  border-radius: 0 0 5px 5px;
-  &:hover {
-    background: #eee;
-  }*/
+    padding: 5px 0;
+    background-color: #ddd;
+    border-radius: 0 0 5px 5px;
+    &:hover {
+      background: #eee;
+    }*/
 }
 #stats {
   position: absolute;

@@ -90,8 +90,8 @@ class Effect extends VantaBase {
         this.blending = colorB > bgB ? 'additive' : 'subtractive';
 
         const geometry = new THREE.BufferGeometry();
-        geometry.addAttribute('position', new THREE.BufferAttribute(this.linePositions, 3).setDynamic(true));
-        geometry.addAttribute('color', new THREE.BufferAttribute(this.lineColors, 3).setDynamic(true));
+        geometry.setAttribute('position', new THREE.BufferAttribute(this.linePositions, 3).setUsage(true));
+        geometry.setAttribute('color', new THREE.BufferAttribute(this.lineColors, 3).setUsage(true));
         geometry.computeBoundingSphere();
         geometry.setDrawRange(0, 0);
         const material = new THREE.LineBasicMaterial({

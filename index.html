@@ -17,10 +17,20 @@
     <meta name="twitter:title" content="Vanta.js - 3D & WebGL Background Animations For Your Website">
     <meta name="twitter:description" content="Gallery of customizable plug & play animated backgrounds using three.js">
     <meta name="twitter:image" content="https://www.vantajs.com/gallery/fb-share-image.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/p5"></script>
     <script src="./gallery/three.min.js"></script>
     <script src="./dist/vanta.birds.min.js"></script>
     <script src="./dist/vanta.waves.min.js"></script>
+    <script src="./dist/vanta.clouds.min.js"></script>
+    <script src="./dist/vanta.clouds2.min.js"></script>
     <script src="./dist/vanta.globe.min.js"></script>
+    <script src="./dist/vanta.topology.min.js"></script>
+    <script src="./dist/vanta.net.min.js"></script>
+    <script src="./dist/vanta.ripple.min.js"></script>
+    <script src="./dist/vanta.trunk.min.js"></script>
+    <script src="./dist/vanta.fog.min.js"></script>
+    <script src="./dist/vanta.cells.min.js"></script>
+    <script src="./dist/vanta.rings.min.js"></script>
     <!-- <script src="../js/tween.js"></script> -->
     <!-- <script src="../three/stats.js"></script> -->
     <!-- <script src="../three/renderstats.js"></script> -->
@@ -28,17 +38,25 @@
 </head>
 <body>
 
-<div id="iframeContent">
-    <div id="my">asdasdasdasd</div>
+<div id="CLOUDS" style="width: '100vw';height: 100vh">
+    <div id="iframeContent">
+        <div id="my">asdasdasdasd</div>
+    </div>
+
+    <iframe id="iframe">
+    </iframe>
 </div>
-
-<iframe id="iframe">
-</iframe>
-
-
-<div id="my-outside">asdasdasdasd</div>
-
-<div id="my-globe">asdasdasdasd</div>
+<div id="CLOUDS2" style="width: '100vw';height: 100vh">asdasdasdasd</div>
+<div id="CELLS" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="BIRDS" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="GLOBE" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="TOPOLOGY" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="RIPPLE" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="FOG" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="NET" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="TRUNK" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="WAVES" style="width: '100%';height: 500px">asdasdasdasd</div>
+<div id="RINGS" style="width: '100%';height: 500px">asdasdasdasd</div>
 
 <script>
 
@@ -52,19 +70,57 @@
     frameDoc.open();
     frameDoc.writeln(content);
     frameDoc.close();
-    setTimeout(()=>{
+    setTimeout(() => {
         VANTA.WAVES({
             el: '#my',
             contextWindow: document.getElementById("iframe").contentWindow
         });
         VANTA.BIRDS({
-            el: '#my-outside',
+            el: '#BIRDS',
+        });
+        VANTA.CLOUDS({
+            el: '#CLOUDS',
+        });
+        VANTA.CLOUDS2({
+            el: '#CLOUDS2',
         })
-        VANTA.GLOBE({
-            el: '#my-globe',
+        VANTA.CLOUDS2({
+            el: '#CLOUDS2',
+        })
+        VANTA.CELLS({
+            el: '#CELLS',
+        });
+        VANTA.RINGS({
+            el: '#RINGS',
+        })
+        VANTA.RIPPLE({
+            el: '#RIPPLE',
+        })
+        VANTA.FOG({
+            el: '#FOG',
+        })
+        // VANTA.FOG({
+        //     el: '#FOG',
+        // })
+        VANTA.TOPOLOGY({
+            el: '#TOPOLOGY',
+        })
+         VANTA.WAVES({
+            el: '#WAVES',
         })
 
-    },200)
+        // VANTA.GLOBE({
+        //     el: '#GLOBE',
+        // });
+        // VANTA.NET({
+        //     el: '#NET',
+        // })
+
+        VANTA.TRUNK({
+            el: '#TRUNK',
+        })
+
+    }, 200)
 
 </script>
 </body>
