@@ -32,5 +32,8 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.3.1"
   }
 }

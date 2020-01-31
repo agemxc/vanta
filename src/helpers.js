@@ -29,7 +29,13 @@ export function ri(start,end) {
   return Math.floor(start + (Math.random() * ((end - start) + 1)))
 }
 
-export const q = sel => document.querySelector(sel)
+export const q = (sel,contextWindow) => {
+  if(contextWindow){
+    console.log(contextWindow)
+  return   contextWindow.document.querySelector(sel)
+  }
+  return document.querySelector(sel)
+}
 
 export const color2Hex = (color) => {
   if (typeof color == 'number'){
