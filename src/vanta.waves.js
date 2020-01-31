@@ -21,7 +21,6 @@ class Waves extends VantaBase {
     constructor(userOptions) {
         THREE = userOptions.THREE || THREE;
         super(userOptions);
-        this.onInit();
     }
 
     getMaterial() {
