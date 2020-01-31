@@ -344,9 +344,9 @@ class Effect extends VantaBase {
                 }
             }
         }
-        this.linesMesh.geometry.setDrawRange(0, numConnected * 2);
-        this.linesMesh.geometry.attributes.position.needsUpdate = true;
-        this.linesMesh.geometry.attributes.color.needsUpdate = true;
+        // this.linesMesh.geometry.setDrawRange(0, numConnected * 2);
+        // this.linesMesh.geometry.attributes.position.needsUpdate = true;
+        // this.linesMesh.geometry.attributes.color.needsUpdate = true;
         // @pointCloud.geometry.attributes.position.needsUpdate = true
 
         return this.t * 0.001
